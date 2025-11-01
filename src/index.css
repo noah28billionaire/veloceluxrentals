@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Audiowide:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+  background-color: #000000;
+  color: #C0C0C0;
+  overflow-x: hidden;
+}
+
+/* Futuristic glow animations */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(192, 192, 192, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(192, 192, 192, 0.6); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+    border-color: rgba(192, 192, 192, 0.6);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(192, 192, 192, 0.8);
+    border-color: rgba(192, 192, 192, 1);
+  }
+}
+
+/* Animated background grid */
+.futuristic-grid {
+  background-image: 
+    linear-gradient(rgba(192, 192, 192, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 192, 192, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+/* Hover effects */
+.hover-glow:hover {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Fade in animations */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Form input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Radio button styling */
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #C0C0C0;
+  border-radius: 50%;
+  background-color: #000000;
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  background-color: #C0C0C0;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+/* Hide Spline watermark */
+spline-viewer::part(logo) {
+  display: none !important;
+}
+
+spline-viewer [data-spline-watermark],
+spline-viewer [class*="watermark"],
+spline-viewer [id*="watermark"],
+spline-viewer [class*="spline"],
+spline-viewer [class*="logo"],
+spline-viewer a[href*="spline"] {
+  display: none !important;
+}
+
+/* Additional watermark hiding methods */
+spline-viewer::shadow [data-spline-watermark],
+spline-viewer::shadow [class*="watermark"],
+spline-viewer::shadow [id*="watermark"],
+spline-viewer::shadow [class*="spline"],
+spline-viewer::shadow [class*="logo"],
+spline-viewer::shadow a[href*="spline"] {
+  display: none !important;
+}
+
+/* Additional comprehensive watermark removal */
+spline-viewer * {
+  pointer-events: none;
+}
+
+spline-viewer canvas {
+  pointer-events: auto;
+}
+
+/* Force hide any remaining watermarks */
+spline-viewer > div:last-child,
+spline-viewer > a:last-child,
+spline-viewer > span:last-child {
+  display: none !important;
+}
+
+/* More aggressive watermark removal */
+spline-viewer::before,
+spline-viewer::after {
+  display: none !important;
+}
+
+/* Target specific watermark elements */
+spline-viewer [class*="built"],
+spline-viewer [class*="with"],
+spline-viewer [id*="built"],
+spline-viewer [id*="with"],
+spline-viewer [title*="spline"],
+spline-viewer [alt*="spline"],
+spline-viewer [data-testid*="watermark"],
+spline-viewer [data-testid*="logo"],
+spline-viewer div[style*="position: absolute"],
+spline-viewer div[style*="bottom"],
+spline-viewer div[style*="right"],
+spline-viewer a[target="_blank"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Hide iframe content that might contain watermarks */
+spline-viewer iframe {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Force hide any elements in bottom right corner */
+spline-viewer > *:last-child {
+  display: none !important;
+}
+
+/* Additional shadow DOM targeting */
+spline-viewer {
+  --spline-watermark-display: none;
+}
+
+/* Override any inline styles */
+spline-viewer * {
+  color: transparent !important;
+}
+
+spline-viewer canvas,
+spline-viewer model-viewer {
+  color: initial !important;
+}
+
+/* Clean full-width bottom overlay to hide watermark */
+spline-viewer {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+spline-viewer::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 10vh !important;
+  background: linear-gradient(to top, #000000 80%, transparent) !important;
+  z-index: 9999 !important;
+  display: block !important;
+  pointer-events: none !important;
+}
+
+/* Nuclear option - hide everything in bottom area */
+spline-viewer > div:last-child,
+spline-viewer > span:last-child,
+spline-viewer > a:last-child,
+spline-viewer > p:last-child {
+  background: #000000 !important;
+  color: #000000 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force black overlay on any remaining elements */
+spline-viewer [href*="spline"],
+spline-viewer [src*="spline"],
+spline-viewer [class*="watermark"],
+spline-viewer [id*="watermark"] {
+  background: #000000 !important;
+  color: #000000 !important;
+  opacity: 0 !important;
+  transform: scale(0) !important;
+  clip: rect(0, 0, 0, 0) !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
+/* Mobile optimization for hero text */
+@media (max-width: 640px) {
+  .hero-text {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+}
