@@ -51,12 +51,6 @@ function App() {
 
   const losAngelesVehicles = [
     {
-      name: 'Lamborghini Aventador SV Roadster',
-      rates: '$300/hr • $800/4 hrs • $1,200/8 hrs • $1,800/24 hrs',
-      description: 'An exclusive open-top supercar with striking design and rare performance. A unique opportunity for a truly standout experience.',
-      location: 'Los Angeles'
-    },
-    {
       name: 'Lamborghini Urus',
       rates: '$200/hr • $400/4 hrs • $600/8 hrs • $900/24 hrs',
       description: 'A bold and dynamic SUV that blends power and style. Ideal for drivers seeking a distinctive presence on the road.',
