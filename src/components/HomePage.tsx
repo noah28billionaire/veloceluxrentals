@@ -144,12 +144,12 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-black text-silver font-sans relative futuristic-grid">
-      <div className="absolute top-8 right-8 z-50">
+      <div className="absolute top-4 right-4 md:top-6 md:right-6 z-50">
         <LanguageSwitcher />
       </div>
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-silver to-transparent animate-pulse"></div>
-        <div className="absolute top-8 left-0 right-0 z-20 fade-in-up">
+        <div className="absolute top-16 md:top-20 left-0 right-0 z-20 fade-in-up">
           <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wider text-silver font-display glow-text">
             Veloce Auto Group Corporation
           </h1>
