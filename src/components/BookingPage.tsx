@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function BookingPage() {
   const [formData, setFormData] = useState({
@@ -85,6 +86,10 @@ function BookingPage() {
             Back to Home
           </button>
         </Link>
+      </div>
+
+      <div className="absolute top-8 right-8 z-50">
+        <LanguageSwitcher />
       </div>
 
       <section className="py-20 px-4 max-w-2xl mx-auto fade-in-up pt-32">

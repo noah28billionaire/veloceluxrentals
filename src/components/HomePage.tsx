@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function HomePage() {
   const [carouselIndexes, setCarouselIndexes] = useState<{ [key: string]: number }>({});
@@ -143,6 +144,9 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-black text-silver font-sans relative futuristic-grid">
+      <div className="absolute top-8 right-8 z-50">
+        <LanguageSwitcher />
+      </div>
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-silver to-transparent animate-pulse"></div>
         <div className="absolute top-8 left-0 right-0 z-20 fade-in-up">
